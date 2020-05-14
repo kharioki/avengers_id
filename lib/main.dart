@@ -4,7 +4,14 @@ void main() => runApp(MaterialApp(
       home: AvengersCard(),
     ));
 
-class AvengersCard extends StatelessWidget {
+class AvengersCard extends StatefulWidget {
+  @override
+  _AvengersCardState createState() => _AvengersCardState();
+}
+
+class _AvengersCardState extends State<AvengersCard> {
+  int avengerLevel = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +21,18 @@ class AvengersCard extends StatelessWidget {
         centerTitle: true,
         elevation: 0.0,
         backgroundColor: Colors.grey[850],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // update badass level
+          setState(() {
+            avengerLevel += 1;
+          });
+        },
+        child: Icon(
+          Icons.add,
+        ),
+        backgroundColor: Colors.grey[700],
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0),
@@ -53,7 +72,7 @@ class AvengersCard extends StatelessWidget {
               height: 30.0,
             ),
             Text(
-              'CURRENT AVENGER LEVEL',
+              'CURRENT BADASS LEVEL',
               style: TextStyle(
                 color: Colors.grey,
                 letterSpacing: 2.0,
@@ -63,7 +82,7 @@ class AvengersCard extends StatelessWidget {
               height: 10.0,
             ),
             Text(
-              'Bad-ass',
+              '$avengerLevel',
               style: TextStyle(
                 color: Colors.amberAccent[200],
                 letterSpacing: 2.0,
@@ -77,7 +96,7 @@ class AvengersCard extends StatelessWidget {
             Row(
               children: <Widget>[
                 Icon(
-                  Icons.email,
+                  Icons.alternate_email,
                   color: Colors.grey[400],
                 ),
                 SizedBox(
