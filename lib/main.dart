@@ -10,7 +10,7 @@ class AvengersCard extends StatefulWidget {
 }
 
 class _AvengersCardState extends State<AvengersCard> {
-  int avengerLevel = 0;
+  int avengerLevel = 9;
 
   @override
   Widget build(BuildContext context) {
