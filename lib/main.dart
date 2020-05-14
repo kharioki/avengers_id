@@ -20,6 +20,16 @@ class AvengersCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/lg-portrait.jpg'),
+                radius: 50.0,
+              ),
+            ),
+            Divider(
+              height: 80.0,
+              color: Colors.grey[800],
+            ),
             Text(
               'NAME',
               style: TextStyle(
